@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+
+    body::-webkit-scrollbar{
+        display: none;
+    }
+
+    .max{
+        padding: 0;
+    }
+
+
+    .blurBg{
+        background-color: rgba(255, 255, 255, 0.025);
+    }
+
+    .hamburger > *{
+        pointer-events: none;
+    }
+
+    .barlow-condensed-regular {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+    .bellefair-regular {
+        font-family: "Bellefair", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+
+    .slide-in{
+        animation: slide-in .3s ease-in forwards 1;
+    }
+
+    .slide-out{
+        animation: slide-out .3s ease-in forwards 1;
+    }
+
+    @keyframes slide-in{
+        from{
+            right: -100%;
+        }
+        to{
+            right: 0;
+        }
+    }
+
+    @keyframes slide-out{
+        from{
+            right: 0;
+        }
+        to{
+            right: -100%;
+        }
+    }
+
+    #active_call{
+        background-color: rgba(255, 255, 255, 0.199);
+        transition: transform .4s ease-in;
+    }
+    #btn_parent:hover #active_call{
+        transform: scale(1.4);
+    }
+
+    .rotating{
+        animation: rotate 25s linear forwards infinite;
+    }
+
+    .active-input{
+        background-color: white !important;
+    }
+
+    @keyframes rotate {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(-360deg);
+        }
+    }
+    .pulsing{
+        animation:pulsing 2s linear alternate infinite .05s;
+    }
+
+    @keyframes pulsing {
+        25%{
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.481),
+            -0 -0 5px rgba(255, 255, 255, 0.481);
+        }
+
+        59%{
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.481),
+                        -2px -2px 5px rgba(255, 255, 255, 0.481);
+        }
+
+        75%{
+            box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.481),
+                        -3px -3px 15px rgba(255, 255, 255, 0.481);
+        }
+
+        100%{
+            box-shadow: 4px 4px 20px rgba(255, 255, 255, 0.481),
+                        -4px -4px 20px rgba(255, 255, 255, 0.481);
+        }
+    }
+
+
+    @media (min-width: 760px){
+        .max{
+            padding: 0 8%;
+        }
+    }
+}
